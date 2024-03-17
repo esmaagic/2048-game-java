@@ -384,7 +384,7 @@ public class Igra2048 {
 	 * funkcija spasi trenutno stanje tabele u fajl.
 	 */
 	public void sacuvajTabeluUFajl() {
-		try (FileWriter writer = new FileWriter("C:\\Users\\Esma\\eclipse-workspace\\2048\\src\\stanjeTabele.txt",false)) {
+		try (FileWriter writer = new FileWriter("path to datoteke stanjeTabele.txt",false)) {
 			for (int i = 0; i < tabela.length; i++) {
 				for (int j = 0; j < tabela[i].length; j++) {
 					writer.write(tabela[i][j] + " ");
@@ -401,7 +401,7 @@ public class Igra2048 {
 	 * 
 	 */
 	public void ucitajTabeluIzFajla() {
-		try (BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Esma\\\\eclipse-workspace\\\\2048\\\\src\\\\stanjeTabele.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("path to datoteke stanjeTabele.txt"))) {
 
 			for (int i = 0; i < tabela.length; i++) {
 				String[] line = reader.readLine().split(" ");
@@ -421,7 +421,7 @@ public class Igra2048 {
 	public static int velicinaTabele() {
 		int n = 0;
 
-		try (BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Esma\\\\eclipse-workspace\\\\2048\\\\src\\\\stanjeTabele.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("path to datoteke stanjeTabele.txt"))) {
 			while (reader.readLine() != null) {
 				n++;
 			}
@@ -437,7 +437,7 @@ public class Igra2048 {
 	 * @return
 	 */
 	public static boolean tabelaJePrazna() {
-		try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\Esma\\eclipse-workspace\\2048\\src\\stanjeTabele.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("path to datoteke stanjeTabele.txt"))) {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				String[] numbers = line.split("\\s+");
@@ -475,7 +475,7 @@ public class Igra2048 {
 	 * @param topNumbers
 	 */
 	private void spasiNajboljeBodoveUFajl(int topNumbers[]) {
-		try (FileWriter writer = new FileWriter("C:\\\\Users\\\\Esma\\\\eclipse-workspace\\\\2048\\\\src\\\\najboljiBodovi.txt")) {
+		try (FileWriter writer = new FileWriter("path to datoteke najboljiBodovi.txt")) {
 			for (int i = topNumbers.length - 1; i >= 0; i--) {
 				writer.write(topNumbers[i] + "\n");
 			}
@@ -512,7 +512,7 @@ public class Igra2048 {
 	 */
 	public int[] ucitajBodove() {
 		int topNumbers[] = new int[3];
-		try (BufferedReader reader = new BufferedReader(new FileReader("C:\\\\Users\\\\Esma\\\\eclipse-workspace\\\\2048\\\\src\\\\najboljiBodovi.txt"))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader("path to datoteke najboljiBodovi.txt"))) {
 			for (int i = topNumbers.length - 1; i >= 0; i--) {
 				topNumbers[i] = Integer.parseInt(reader.readLine());
 			}
